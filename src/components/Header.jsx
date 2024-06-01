@@ -6,7 +6,7 @@ const Header = () => {
   const { isOpen, setIsOpen } = useContext(SidebarContext);
 
   return (
-    <header className="bg-green-200">
+    <header className="bg-green-400">
       <div>Header</div>
       <div
         onClick={() => setIsOpen(!isOpen)}
