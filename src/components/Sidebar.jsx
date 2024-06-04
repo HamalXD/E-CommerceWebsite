@@ -7,8 +7,8 @@ import { SidebarContext } from "../contexts/SidebarContext";
 import { CartContext } from "../contexts/CartContext";
 
 const Sidebar = () => {
-  const { isOpen, setIsOpen, handleClose } = useContext(SidebarContext);
-  const { cart, clearCart } = useContext(CartContext);
+  const { isOpen, handleClose } = useContext(SidebarContext);
+  const { cart, clearCart, total } = useContext(CartContext);
 
   return (
     <div
@@ -25,15 +25,15 @@ const Sidebar = () => {
           <IoMdArrowForward className="text-2xl" />
         </div>
       </div>
-      <div>
+      <div className="flex flex-col gap-y-2 h-[520px] lg:h-[640px] overflow-y-auto overflow-x-hidden border-b">
         {cart.map((item) => {
           return <CartItems item={item} key={item.id} />;
         })}
       </div>
-      <div>
-        <div className="bg-green-400 flex w-full justify-between items-center">
-          <div>
-            <span>Total:</span>$ 1000
+      <div className="flex flex-col gap-y-3 py-4 mt-4">
+        <div className="flex w-full justify-between items-center">
+          <div className="uppercase font-semibold">
+            <span>Total:</span>$ {parseFloat(total).toFixed(2)}
           </div>
           <div
             onClick={clearCart}
