@@ -24,11 +24,7 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between h-full">
         <Link to={"/"}>
           <div>
-            <img
-              className="w-[40px]"
-              src="https://thumbs.dreamstime.com/z/lets-shopping-logo-design-template-cart-icon-designs-134743663.jpg?ct=jpeg"
-              alt=""
-            />
+            <span className="text-primary text-xl">Online Store</span>
           </div>
         </Link>
 

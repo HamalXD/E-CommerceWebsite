@@ -6,6 +6,7 @@ const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [itemAmount, setItemAmount] = useState(0);
   const [total, setTotal] = useState(0);
+  
 
   useEffect(() => {
     const total = cart.reduce((accumulator, currentItems) => {
@@ -26,7 +27,6 @@ const CartProvider = ({ children }) => {
   const addToCart = (product, id) => {
     const newItem = { ...product, amount: 1 };
     const cartItem = cart.find((item) => item.id === id);
-    // console.log(cartItem);
     if (cartItem) {
       const newCart = [...cart].map((item) => {
         if (item.id === id) {
