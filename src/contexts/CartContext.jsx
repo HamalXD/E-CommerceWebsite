@@ -17,7 +17,7 @@ const CartProvider = ({ children }) => {
   useEffect(() => {
     if (cart) {
       const amount = cart.reduce((accumulator, currentItems) => {
-        return accumulator + currentItems.price * currentItems.amount;
+        return accumulator + currentItems.amount;
       }, 0);
       setItemAmount(amount);
     }
